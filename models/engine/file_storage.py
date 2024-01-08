@@ -5,9 +5,10 @@ class FileStorage():
     __objects = {}
 
     def all(self):
-        pass
-    def new(self):
-        pass
+        return FileStorage.__objects
+    
+    def new(self, obj):
+        
     def save(self):
         pass
     def reload(self):
