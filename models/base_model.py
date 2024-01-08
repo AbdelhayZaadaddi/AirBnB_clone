@@ -4,7 +4,7 @@ import uuid
 from datetime import datetime
 from models import storage
 
-class BaseModel():
+class BaseModel:
     def __init__(self, *args, **kwargs):
         timeformt = '%Y-%m-%dT%H:%M:%S.%f'
         if kwargs:
