@@ -27,6 +27,7 @@ class FileStorage():
             json.dump(serialized_objects, file)
         
     def reload(self):
+
         try:
             with open(FileStorage.__file_path, 'r') as file:
                 data = json.load(file)
@@ -35,5 +36,6 @@ class FileStorage():
                     class_obj = globals()[class_name]
                     obj_instance = class_obj(**value)
                     FileStorage.__objects[key] = obj_instance
+
         except FileNotFoundError:
             pass
