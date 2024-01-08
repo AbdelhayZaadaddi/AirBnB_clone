@@ -1,5 +1,12 @@
 import cmd
 
 class HBNBCommand(cmd.Cmd):
+
+    prompt = "(hbnb) "
+
+    def do_quit(self, arg):
+        return True
     
-    pass
+    def do_EOF(self, arg):
+        print()
+        return True
