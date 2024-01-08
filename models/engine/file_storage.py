@@ -1,5 +1,6 @@
+#!/usr/bin/python3
+
 import json
-from models.base_model import BaseModel
 
 class FileStorage:
     __file_path = "file.json"
@@ -24,10 +25,20 @@ class FileStorage:
         try:
             with open(FileStorage.__file_path, 'r') as file:
                 data = json.load(file)
+
                 for key, value in data.items():
-                    class_name, obj_id = key.split('.')
-                    class_obj = globals()[class_name]
-                    obj_instance = class_obj(**value)
-                    FileStorage.__objects[key] = obj_instance
+                    class_name = value["__class__"]
+
+                    if class_name in globals():
+                        class_obj = globals()[class_name]
+                        print(class_obj)
+                        del value["__class__"]
+                        obj_instance = class_obj(**value)
+                        FileStorage.__objects[key] = obj_instance
+                    else:
+                        from models.base_model import BaseModel
+
+                        obj = eval(key.split(".")[0])(**value)
+                        FileStorage.__objects[key] = obj
         except FileNotFoundError:
             pass
