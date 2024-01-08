@@ -10,3 +10,9 @@ class HBNBCommand(cmd.Cmd):
     def do_EOF(self, arg):
         print()
         return True
+    
+    def emptyline(self)
+        pass
+
+if __name__ == '__main__':
+    HBNBCommand().cmdloop()
