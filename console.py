@@ -89,6 +89,42 @@ class HBNBCommand(cmd.Cmd):
 
 
     def do_update(self, arg):
+        if not arg:
+            print("** class name missing **")
+            return
+        try:
+            args = arg.split()
+            class_name = args[0]
+            instance_id = args[1]
+            attribute_name = args[2]
+            attribute_value = args[3]
+
+            obj_key = "{}.{}".format(class_name, instance_id)
+            obj = storage.all().get(obj_key)
+
+            if not obj:
+                print("** no instance found **")
+                return
+            if len(args) < 5:
+                print("** attribute name missing **")
+                return
+            if len(args) < 6:
+                print("** value missing **")
+                return
+            
+            if attribute_name in ("id", "created_at", "updated_at"):
+                return
+            
+            try:
+                attribute_value = type(getattr(obj, attribute_name))(attribute_value)
+            except (AttributeError, TypeError):
+                pass
+
+            setattr(obj, attribute_name, attribute_value)
+            obj.save()
+        
+        except IndexError:
+            print("** insta")
         pass
 
 if __name__ == '__main__':
