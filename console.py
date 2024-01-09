@@ -2,6 +2,7 @@
 
 import cmd
 from models.base_model import BaseModel
+from models import storage
 
 class HBNBCommand(cmd.Cmd):
 
@@ -20,19 +21,29 @@ class HBNBCommand(cmd.Cmd):
         pass
 
 
-    def create():
+    def do_create(self, arg):
+        if not arg:
+            print("** class name missing **")
+            return
+        
+        try:
+            new_instance = eval(arg)()
+            new_instance.save()
+            print(new_instance.id)
+        except NameError:
+            print("** class doesn't exist **")
+
+
+    def do_show():
         pass
 
-    def show():
+    def do_destroy():
         pass
 
-    def destroy():
+    def do_all():
         pass
 
-    def all():
-        pass
-
-    def update():
+    def do_update():
         pass
 
 if __name__ == '__main__':
