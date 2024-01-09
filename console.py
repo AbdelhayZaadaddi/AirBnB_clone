@@ -35,7 +35,22 @@ class HBNBCommand(cmd.Cmd):
 
 
     def do_show(self, arg):
-        pass
+        if not arg:
+            print("** class name missing **")
+            return
+        
+        try:
+            class_name, instance_id = arg.split()
+            obj_key = "{}.{}".format(class_name, instance_id)
+            obj = storage.all().get(obj_key)
+            if not obj:
+                print("** no instance found **")
+                return
+            print(obj)
+        except ValueError:
+            print("** instance id missing **")
+        except NameError:
+            print("** class doesn't exist **")
 
     def do_destroy(self, arg):
         pass
