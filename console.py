@@ -71,7 +71,22 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_all(self, arg):
-        pass
+        if arg:
+            try:
+                obj_list = [str(obj) for obj in storage.all().values() if obj.__class__.__name__ == arg]
+                if not obj_list:
+                    print("** class doesn't exist **")
+                    return
+                print(obj_list)
+                return
+            except NameError:
+                pass
+            print("** class doesn't exist **")
+            return
+        
+        obj_list = [str(obj) for obj in storage.all().value()]
+        print(obj_list)
+
 
     def do_update(self, arg):
         pass
