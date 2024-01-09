@@ -44,6 +44,7 @@ class FileStorage:
                         from models.state import Satate
                         from models.city import City
                         from models.amenity import Amenity
+                        from models.place import Place
                         
 
                         obj = eval(key.split(".")[0])(**value)
