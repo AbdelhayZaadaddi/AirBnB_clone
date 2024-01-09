@@ -95,47 +95,30 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg):
         '''Updates an instance based on the class name and id.'''
-        if not arg:
+        args = arg.split()
+        if len(args) < 1:
             print("** class name missing **")
-            return
-        try:
-            args = arg.split()
-            class_name = args[0]
-            instance_id = args[1]
-            attribute_name = args[2]
-            attribute_value = args[3]
-
-            obj_key = "{}.{}".format(class_name, instance_id)
-            obj = storage.all().get(obj_key)
-
-            if not obj:
-                print("** no instance found **")
-                return
-            if len(args) < 5:
-                print("** attribute name missing **")
-                return
-            if len(args) < 6:
-                print("** value missing **")
-                return
-            
-            if attribute_name in ("id", "created_at", "updated_at"):
-                return
-            
-            try:
-                attribute_value = type(getattr(obj, attribute_name))(attribute_value)
-            except (AttributeError, TypeError):
-                pass
-
-            setattr(obj, attribute_name, attribute_value)
-            obj.save()
-        
-        except IndexError:
-            print("** instance id missing **")
-        except ValueError:
-            print("** invalid input **")
-        except NameError:
+        elif args[0] not in globals():
             print("** class doesn't exist **")
-
+        elif len(args) < 2:
+            print(" instance id missing **")
+        elif f"{args[0]}.{args[1]}" not in storage.all():
+            print("** no instance found **")
+        elif len(args) < 3:
+            print("** attribute name missing **")
+        elif len(args) < 4:
+            print("** value missing **")
+        else:
+            key = "{}.{}".format(args[0], args[1])
+            if key not in storage.all():
+                print("** no instance found **")
+            else:
+                if args[2] in ("id", "craeted_at", "updated_at"):
+                    print("can't update **")
+                    return
+                obj = storage.all()[key]
+                setattr(obj, args[2], args[3])
+                storage.save()
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
