@@ -124,8 +124,12 @@ class HBNBCommand(cmd.Cmd):
             obj.save()
         
         except IndexError:
-            print("** insta")
-        pass
+            print("** instance id missing **")
+        except ValueError:
+            print("** invalid input **")
+        except NameError:
+            print("** class doesn't exist **")
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
