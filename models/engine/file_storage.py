@@ -41,7 +41,8 @@ class FileStorage:
                     else:
                         from models.base_model import BaseModel
                         from models.user import User
-
+                        from models.state import Satate
+                        from models.city import 
 
                         obj = eval(key.split(".")[0])(**value)
                         FileStorage.__objects[key] = obj
