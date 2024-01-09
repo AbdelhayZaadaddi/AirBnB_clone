@@ -34,16 +34,16 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
 
-    def do_show():
+    def do_show(self, arg):
         pass
 
-    def do_destroy():
+    def do_destroy(self, arg):
         pass
 
-    def do_all():
+    def do_all(self, arg):
         pass
 
-    def do_update():
+    def do_update(self, arg):
         pass
 
 if __name__ == '__main__':
