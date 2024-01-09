@@ -12,6 +12,8 @@ This abstraction will also allow you to change the type of storage easily withou
 
 The console will be a tool to validate this storage engine
 
+![alt text](https://drive.google.com/file/d/10wyFPoTN3u_aRNUvVtnxbJcVDZK2DCvy/view?usp=drivesdk)
+
 ## Examples
 
 Interactive mode:
