@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+'''
+FileStorage module Containig the FileStorage class
+'''
 
 import json
 
@@ -37,6 +40,8 @@ class FileStorage:
                         FileStorage.__objects[key] = obj_instance
                     else:
                         from models.base_model import BaseModel
+                        from models.user import User
+
 
                         obj = eval(key.split(".")[0])(**value)
                         FileStorage.__objects[key] = obj
