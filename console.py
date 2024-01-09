@@ -18,5 +18,21 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         pass
 
+
+    def create():
+        pass
+
+    def show():
+        pass
+
+    def destroy():
+        pass
+
+    def all():
+        pass
+
+    def update():
+        pass
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
