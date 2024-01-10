@@ -142,7 +142,8 @@ class HBNBCommand(cmd.Cmd):
                         args = args.split(",", 1)
                         key = f"{class_name}.{eval(args[0].strip())}"
                         if "{" in args[1]:
-                            
+                            data_obj = eval(args[1])
+                            if key 
 
         except Exception:
             return
