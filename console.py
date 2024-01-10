@@ -128,7 +128,7 @@ class HBNBCommand(cmd.Cmd):
         using <class name>.<method name>(<args>)
         '''
         try:
-            names, args = arg.strip('')
+            names, args = arg.strip(')').split('(')
 
         except Exception:
             return
