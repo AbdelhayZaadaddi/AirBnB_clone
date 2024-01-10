@@ -122,7 +122,13 @@ class HBNBCommand(cmd.Cmd):
                 setattr(obj, args[2], args[3])
                 storage.save()
 
-    
+    def default(self, arg):
+        '''
+        Handel dynamic commands
+        using <class name>.<method name>(<args>)
+        '''
+        try:
+            names, args = arg.strip('')
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
