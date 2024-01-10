@@ -124,14 +124,14 @@ class HBNBCommand(cmd.Cmd):
 
     def default(self, arg):
         '''
-        Handel dynamic commands
-        using <class name>.<method name>(<args>)
+        handle dynamic commands
+        using : <class name>.<method name>(<args>)
         '''
         try:
             names, args = arg.strip(')').split('(')
             class_name, method_name = names.split('.')
             if (method_name == "count"):
-                print(self.conter(class_name))
+                print(self.counter(class_name))
             else:
                 fun = f"do_{method_name}"
                 method_name = getattr(self, fun, None)
@@ -144,13 +144,27 @@ class HBNBCommand(cmd.Cmd):
                         if "{" in args[1]:
                             data_obj = eval(args[1])
                             if key in storage.all():
-                                obj =storage.all()[key]
+                                obj = storage.all()[key]
                             else:
                                 print(f"No key found : {key}")
-                                for key, value in data_obj.items():
-                                    setattr(obj, key, value)
-                                    storage.save()
+                            for key, value in data_obj.items():
+                                setattr(obj, key, value)
+                                storage.save()
+                        else:
+                            args = args[1].replace('"', "").split(",")
+                            c = class_name
+                            k = key.split('.')[1]
+                            a1 = args[0].strip()
+                            a2 = args[1].strip()
 
+                            method_name(f"{c} {k} {a1} {a2}")
+                            storage.save()
+                    else:
+                        args = args.replace('"', "")
+                        args = args.replace(" ", "")
+                        args = args.replace(",", " ")
+                        args = f"{class_name} {args}"
+                        method_name(args)
         except Exception:
             return
 
