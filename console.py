@@ -132,6 +132,17 @@ class HBNBCommand(cmd.Cmd):
             class_name, method_name = names.split('.')
             if (method_name == "count"):
                 print(self.conter(class_name))
+            else:
+                fun = f"do_{method_name}"
+                method_name = getattr(self, fun, None)
+                if len(args) == 0:
+                    method_name(class_name)
+                else:
+                    if fun == "do_update":
+                        args = args.split(",", 1)
+                        key = f"{class_name}.{eval(args[0].strip())}"
+                        if "{" in args[1]:
+                            
 
         except Exception:
             return
