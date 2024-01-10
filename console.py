@@ -129,6 +129,7 @@ class HBNBCommand(cmd.Cmd):
         '''
         try:
             names, args = arg.strip(')').split('(')
+            class_name, method_name = names.split('.')
 
         except Exception:
             return
