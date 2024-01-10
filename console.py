@@ -146,7 +146,10 @@ class HBNBCommand(cmd.Cmd):
                             if key in storage.all():
                                 obj =storage.all()[key]
                             else:
-                                
+                                print(f"No key found : {key}")
+                                for key, value in data_obj.items():
+                                    setattr(obj, key, value)
+                                    storage.save()
 
         except Exception:
             return
