@@ -143,7 +143,8 @@ class HBNBCommand(cmd.Cmd):
                         key = f"{class_name}.{eval(args[0].strip())}"
                         if "{" in args[1]:
                             data_obj = eval(args[1])
-                            if key 
+                            if key in storage.all():
+                                obj =storage.all()
 
         except Exception:
             return
