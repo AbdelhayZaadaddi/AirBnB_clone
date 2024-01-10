@@ -146,6 +146,7 @@ class HBNBCommand(cmd.Cmd):
                             if key in storage.all():
                                 obj =storage.all()[key]
                             else:
+                                args = args[1]
 
         except Exception:
             return
