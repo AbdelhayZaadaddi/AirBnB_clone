@@ -90,8 +90,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
         
-        obj_list = [str(obj) for obj in storage.all().value()]
+        obj_list = [str(obj) for obj in storage.all().values()]  # fix the typo here
         print(obj_list)
+
 
 
     def do_update(self, arg):
@@ -120,6 +121,8 @@ class HBNBCommand(cmd.Cmd):
                 obj = storage.all()[key]
                 setattr(obj, args[2], args[3])
                 storage.save()
+
+    
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
