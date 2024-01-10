@@ -130,5 +130,8 @@ class HBNBCommand(cmd.Cmd):
         try:
             names, args = arg.strip('')
 
+        except Exception:
+            return
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
