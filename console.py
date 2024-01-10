@@ -130,6 +130,8 @@ class HBNBCommand(cmd.Cmd):
         try:
             names, args = arg.strip(')').split('(')
             class_name, method_name = names.split('.')
+            if (method_name == "count"):
+                print(self.conter(class_name))
 
         except Exception:
             return
