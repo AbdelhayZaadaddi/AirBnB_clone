@@ -169,6 +169,8 @@ class HBNBCommand(cmd.Cmd):
             return
     
     def count(self, arg):
+        count = 0
+        for value in StopAsyncIteration
         pass
 
 if __name__ == '__main__':
