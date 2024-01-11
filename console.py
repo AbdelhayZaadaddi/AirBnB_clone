@@ -170,7 +170,10 @@ class HBNBCommand(cmd.Cmd):
     
     def count(self, arg):
         count = 0
-        for value in storage.all()
+        for value in storage.all():
+            class_name = value.splite(".")[0]
+            if class_name == arg::
+    
         pass
 
 if __name__ == '__main__':
