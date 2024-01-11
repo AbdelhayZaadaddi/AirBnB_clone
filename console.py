@@ -167,6 +167,9 @@ class HBNBCommand(cmd.Cmd):
                         method_name(args)
         except Exception:
             return
+    
+    def count(self):
+        pass
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
