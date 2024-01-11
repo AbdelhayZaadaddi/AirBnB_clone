@@ -1,1 +1,4 @@
-import unittest 
+import unittest
+
+class Test():
+    pass
