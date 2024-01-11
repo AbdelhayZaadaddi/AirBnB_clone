@@ -122,6 +122,16 @@ class HBNBCommand(cmd.Cmd):
                 setattr(obj, args[2], args[3])
                 storage.save()
 
+
+    def count(self, arg):
+        count = 0
+        for value in storage.all():
+            class_name = value.split(".")[0]
+            if class_name == arg:
+                count = count + 1
+        return count
+
+
     def default(self, arg):
         '''
         handle dynamic commands
@@ -168,13 +178,6 @@ class HBNBCommand(cmd.Cmd):
         except Exception:
             return
     
-    def count(self, arg):
-        count = 0
-        for value in storage.all():
-            class_name = value.split(".")[0]
-            if class_name == arg:
-                count = count + 1
-        return count
-
+    
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
