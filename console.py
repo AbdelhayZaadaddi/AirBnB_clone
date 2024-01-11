@@ -124,14 +124,7 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
 
 
-    def counter(self, arg):
-        '''count how many obj we have'''
-        count = 0
-        for value in storage.all():
-            class_name = value.split(".")[0]
-            if class_name == arg:
-                count += 1
-        return count
+    
 
 
     def default(self, arg):
@@ -181,5 +174,14 @@ class HBNBCommand(cmd.Cmd):
             return
     
     
+    def counter(self, arg):
+        '''count how many obj we have'''
+        count = 0
+        for value in storage.all():
+            class_name = value.split(".")[0]
+            if class_name == arg:
+                count += 1
+        return count
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
