@@ -171,7 +171,7 @@ class HBNBCommand(cmd.Cmd):
     def count(self, arg):
         count = 0
         for value in storage.all():
-            class_name = value.splite(".")[0]
+            class_name = value.split(".")[0]
             if class_name == arg:
                 count = count + 1
         return count
