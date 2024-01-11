@@ -174,8 +174,7 @@ class HBNBCommand(cmd.Cmd):
             class_name = value.splite(".")[0]
             if class_name == arg:
                 count = count + 1
-            return count
-        pass
+        return count
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
