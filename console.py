@@ -170,7 +170,7 @@ class HBNBCommand(cmd.Cmd):
     
     def count(self, arg):
         count = 0
-        for value in StopAsyncIteration
+        for value in storage.all()
         pass
 
 if __name__ == '__main__':
