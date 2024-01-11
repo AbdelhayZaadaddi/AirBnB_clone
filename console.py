@@ -50,8 +50,9 @@ class HBNBCommand(cmd.Cmd):
             if not obj:
                 print("** no instance found **")
                 return
-            if obj_key in storage
-            print(obj)
+            if obj_key in storage.all():
+                print(storage.all()[obj_key])
+            #print(obj)
         except ValueError:
             print("** instance id missing **")
         except NameError:
