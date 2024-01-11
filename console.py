@@ -6,7 +6,9 @@ from models.base_model import BaseModel
 from models.user import User
 from models import storage
 
+
 class HBNBCommand(cmd.Cmd):
+
     """Documentation here"""
 
     prompt = "(hbnb) "
@@ -90,7 +92,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
 
-        obj_list = [str(obj) for obj in storage.all().values()]  # fix the typo here
+        obj_list = [str(obj) for obj in storage.all().values()]
+        # fix the typo here
         print(obj_list)
 
     def do_update(self, arg):
@@ -174,6 +177,7 @@ class HBNBCommand(cmd.Cmd):
             if class_name == arg:
                 count += 1
         return count
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
