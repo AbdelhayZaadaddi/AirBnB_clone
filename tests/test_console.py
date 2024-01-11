@@ -2,5 +2,8 @@
 """Unit test for Console"""
 
 import unittest
+
+
 class TestConsole(unittest.TestCase):
-  pass
+    """Unit Test for Console"""
+    pass

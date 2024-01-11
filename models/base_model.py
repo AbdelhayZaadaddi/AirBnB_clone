@@ -4,6 +4,7 @@ import uuid
 from datetime import datetime
 from models import storage
 
+
 class BaseModel:
     def __init__(self, *args, **kwargs):
         timeformt = '%Y-%m-%dT%H:%M:%S.%f'
@@ -34,5 +35,3 @@ class BaseModel:
         obj_dict['created_at'] = self.created_at.isoformat()
         obj_dict['updated_at'] = self.updated_at.isoformat()
         return obj_dict
-    
-
