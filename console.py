@@ -172,8 +172,9 @@ class HBNBCommand(cmd.Cmd):
         count = 0
         for value in storage.all():
             class_name = value.splite(".")[0]
-            if class_name == arg::
-    
+            if class_name == arg:
+                count = count + 1
+            return count
         pass
 
 if __name__ == '__main__':
