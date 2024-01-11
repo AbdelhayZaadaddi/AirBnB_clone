@@ -7,35 +7,34 @@ from models.user import User
 from models import storage
 
 class HBNBCommand(cmd.Cmd):
+    """Documentation here"""
 
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
         '''Quit command to exit the program'''
         return True
-    
+
     def do_EOF(self, arg):
         '''EOF command to exit the program'''
         print()
         return True
-    
+
     def emptyline(self):
         pass
-
 
     def do_create(self, arg):
         '''Creates a new instance of BaseModel, saves it, and prints the id'''
         if not arg:
             print("** class name missing **")
             return
-        
+
         try:
             new_instance = eval(arg)()
             new_instance.save()
             print(new_instance.id)
         except NameError:
             print("** class doesn't exist **")
-
 
     def do_show(self, arg):
         '''Prints the string representation of an instance.'''
@@ -61,7 +60,7 @@ class HBNBCommand(cmd.Cmd):
         if not arg:
             print("** class name missing **")
             return
-        
+
         try:
             class_name, instance_id = arg.split()
             obj_key = "{}.{}".format(class_name, instance_id)
@@ -90,11 +89,9 @@ class HBNBCommand(cmd.Cmd):
                 pass
             print("** class doesn't exist **")
             return
-        
+
         obj_list = [str(obj) for obj in storage.all().values()]  # fix the typo here
         print(obj_list)
-
-
 
     def do_update(self, arg):
         '''Updates an instance based on the class name and id.'''
@@ -122,10 +119,6 @@ class HBNBCommand(cmd.Cmd):
                 obj = storage.all()[key]
                 setattr(obj, args[2], args[3])
                 storage.save()
-
-
-    
-
 
     def default(self, arg):
         '''
@@ -172,8 +165,7 @@ class HBNBCommand(cmd.Cmd):
                         method_name(args)
         except Exception:
             return
-    
-    
+
     def counter(self, arg):
         '''count how many obj we have'''
         count = 0
