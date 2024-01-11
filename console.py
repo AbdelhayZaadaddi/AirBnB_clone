@@ -50,6 +50,7 @@ class HBNBCommand(cmd.Cmd):
             if not obj:
                 print("** no instance found **")
                 return
+            if obj_key in storage
             print(obj)
         except ValueError:
             print("** instance id missing **")
