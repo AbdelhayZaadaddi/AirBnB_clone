@@ -20,7 +20,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertequal(8,4+4)
 
         #self.assertequal(model_for_test.__str__(),
-                          f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
+                          #f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
 
 if __name__ == "__main__":
     unittest.main()
