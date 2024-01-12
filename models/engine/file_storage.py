@@ -5,6 +5,7 @@ FileStorage module Containig the FileStorage class
 
 import json
 
+
 class FileStorage:
     __file_path = "file.json"
     __objects = {}

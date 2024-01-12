@@ -1,3 +1,6 @@
+
+<h1 align="center">AirBnB clone - The console </h1>
+
 ## Description 
 
 The console:
@@ -47,4 +50,24 @@ Documented commands (type help <topic>):
 EOF  help  quit
 (hbnb)
 $
+```
+
+### Available Classes
+
+Every model inhertis attributes from BaseModel:
+
+- Attributes
+- BaseModel
+- User
+- City
+- Amenity
+- Place
+- Review
+
+## How to Satrt
+
+Run the following command:
+
+```python
+$ ./console.py
 ```
