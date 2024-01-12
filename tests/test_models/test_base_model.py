@@ -3,7 +3,7 @@
 
 import unittest
 import os
-#from models.base_model import BaseModel
+from models.base_model import BaseModel
 
 print(os.getcwd())
 class TestBaseModel(unittest.TestCase):
