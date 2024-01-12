@@ -17,7 +17,7 @@ class TestBaseModel(unittest.TestCase):
         pass
 
     def test_str(self):
-        self.assertequal(8,4+4)
+        self.assertEqual(8,4+4)
 
         #self.assertequal(model_for_test.__str__(),
                           #f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
