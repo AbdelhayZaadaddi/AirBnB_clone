@@ -9,17 +9,18 @@ print(os.getcwd())
 class TestBaseModel(unittest.TestCase):
     """class for unit test -> BaseModel"""
 
-    def SetUp(self):
-         pass #model_for_test = BaseModel()
+    def setUp(self):
+        print("setup") 
+        self.model = BaseModel()
 
-    def TearDown(self):
-        pass
+    def tearDown(self):
+        print("tear down")
 
     def test_str(self):
+        #model = BaseModel()
         self.assertEqual(8,4+4)
-
-        #self.assertequal(model_for_test.__str__(),
-                          #f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
+        self.assertEqual(self.model.__str__(),
+                         f"[{self.model.__class__.__name__}] ({self.model.id}) {self.model.__dict__}")
 
 if __name__ == "__main__":
     unittest.main()
