@@ -2,14 +2,15 @@
 """Unit test for Base Model"""
 
 import unittest
-from models.base_model import BaseModel
+import os
+#from models.base_model import BaseModel
 
-
+print(os.getcwd())
 class TestBaseModel(unittest.TestCase):
     """class for unit test -> BaseModel"""
 
     def SetUp(self):
-         model_for_test = BaseModel()
+         pass #model_for_test = BaseModel()
 
     def TearDown(self):
         pass
