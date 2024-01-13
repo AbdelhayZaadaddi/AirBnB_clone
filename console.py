@@ -15,7 +15,7 @@ from models import storage
 
 class HBNBCommand(cmd.Cmd):
 
-    """Documentation here"""
+    """HBNBCommand class, uses cmd module to make a CI"""
 
     prompt = "(hbnb) "
 
