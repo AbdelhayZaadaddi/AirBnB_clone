@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 '''Base module class for class to inherit from'''
 
 import uuid

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 '''Class Place inherits from BAseModel'''
 
 from models.base_model import BaseModel
