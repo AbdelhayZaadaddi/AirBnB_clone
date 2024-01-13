@@ -166,7 +166,7 @@ class HBNBCommand(cmd.Cmd):
                             a1 = args[0].strip()
                             a2 = args[1].strip()
 
-                            method_name(f"{c} {k} {args[2]} {args[3]}")
+                            method_name(f"{c} {k} {a1} {a2}")
                             storage.save()
                     else:
                         args = args.replace('"', "")
