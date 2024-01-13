@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" The console handle all commands for Hbnb"""
 
 import cmd
 import models
@@ -28,6 +29,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
+        '''Pass empty line or on enter'''
         pass
 
     def do_create(self, arg):
