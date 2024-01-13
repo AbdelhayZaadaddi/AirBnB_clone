@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Base module class for class to inherit from'''
 
 import uuid
 from datetime import datetime
@@ -6,7 +7,9 @@ from models import storage
 
 
 class BaseModel:
+    '''Defines methods for class to inherit from'''
     def __init__(self, *args, **kwargs):
+        '''Initializes instances'''
         timeformt = '%Y-%m-%dT%H:%M:%S.%f'
         if kwargs:
             for key, value in kwargs.items():
@@ -23,13 +26,16 @@ class BaseModel:
             storage.new(self)
 
     def __str__(self):
+        '''string representation of the object'''
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
+        '''Updates with the current time'''
         self.updated_at = datetime.now()
         storage.save()
 
     def to_dict(self):
+        '''Converts the object's attributes to a dictionary'''
         obj_dict = self.__dict__.copy()
         obj_dict['__class__'] = self.__class__.__name__
         obj_dict['created_at'] = self.created_at.isoformat()
