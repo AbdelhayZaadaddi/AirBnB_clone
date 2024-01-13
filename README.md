@@ -15,7 +15,7 @@ This abstraction will also allow you to change the type of storage easily withou
 
 The console will be a tool to validate this storage engine
 
-![Hbnb](https://drive.google.com/file/d/10wyFPoTN3u_aRNUvVtnxbJcVDZK2DCvy/view?usp=drivesdk)
+![Hbnb](https://i.ibb.co/RSzZ5yh/815046647d23428a14ca.png)
 
 ## Examples
 
