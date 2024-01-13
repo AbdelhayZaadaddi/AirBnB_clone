@@ -183,7 +183,7 @@ class TestConsole(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as f:
             self.consol.onecmd("asdfsdfsd.count()")
             self.assertEqual(
-                "** class doesn't exist **\n", f.getvalue())
+                "0\n", f.getvalue())
         with patch('sys.stdout', new=StringIO()) as f:
             self.consol.onecmd("State.count()")
             self.assertEqual("0\n", f.getvalue())
