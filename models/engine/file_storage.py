@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Serializes and deserializes JSON file """
+""" Serializes and deserializes JSON file. """
 import json
 import os
 
