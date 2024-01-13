@@ -62,7 +62,7 @@ It’s exactly the same as simple shell but limited to a specific use-case. In o
 - Destroy an object
 
 
-## How to Satrt, use and examples
+## How to start, use and examples
 
 Run the following command to start it:
 
