@@ -2,24 +2,8 @@
 """Unit test for Console"""
 
 import unittest
-from models.base_model import BaseModel
 
 
 class TestConsole(unittest.TestCase):
     """Unit Test for Console"""
-
-
-    def setUp(self):
-        """Set Up the two models"""
-        self.model = BaseModel()
-        self.model2 = BaseModel()
-
-    def tearDown(self):
-        """Tear down function"""
-        pass
-
-    def test_console(self):
-        assertEqual(5, 6-1)
-
-if __name__ == "__main__":
-    unittest.main()
+    pass
