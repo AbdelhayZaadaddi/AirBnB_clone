@@ -1,23 +1,30 @@
 #!/usr/bin/python3
-"""Unit test for Amenity"""
+"""Test the Amenity class"""
 
 import unittest
-import os
+from models.amenity import Amenity
 from models.base_model import BaseModel
 
 
 class TestAmenity(unittest.TestCase):
-    """class for unit test -> Amenity"""
+    """Test the Amenity class"""
 
     def setUp(self):
-        """Set Up the two models"""
-        self.model = BaseModel()
-        self.model2 = BaseModel()
+        """Set up the test case"""
+        self.amenity = Amenity()
 
-    def tearDown(self):
-        """Tear down function"""
-        pass
+    def test_instantiation(self):
+        """Test that object is correctly created"""
+        self.assertIsInstance(self.amenity, Amenity)
+
+    def test_name(self):
+        """Test that name attribute is an empty string"""
+        self.assertEqual(self.amenity.name, "")
+
+    def test_inheritance(self):
+        """Test that Amenity class inherits from BaseModel"""
+        self.assertTrue(issubclass(Amenity, BaseModel))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
