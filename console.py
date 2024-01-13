@@ -5,7 +5,7 @@ import cmd
 import models
 from models.base_model import BaseModel
 from models.user import User
-from models.state import Satate
+from models.state import State
 from models.place import Place
 from models.amenity import Amenity
 from models.city import City
@@ -112,7 +112,7 @@ class HBNBCommand(cmd.Cmd):
         elif args[0] not in globals():
             print("** class doesn't exist **")
         elif len(args) < 2:
-            print(" instance id missing **")
+            print("** instance id missing **")
         elif f"{args[0]}.{args[1]}" not in storage.all():
             print("** no instance found **")
         elif len(args) < 3:
@@ -124,8 +124,8 @@ class HBNBCommand(cmd.Cmd):
             if key not in storage.all():
                 print("** no instance found **")
             else:
-                if args[2] in ("id", "craeted_at", "updated_at"):
-                    print("can't update **")
+                if args[2] in ("id", "created_at", "updated_at"):
+                    print("** can't update **")
                     return
                 obj = storage.all()[key]
                 setattr(obj, args[2], args[3])
