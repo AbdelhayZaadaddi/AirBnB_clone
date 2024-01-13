@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" The console handle all commands for Hbnb"""
+"""The console handle all commands for Hbnb"""
 
 import cmd
 import models
