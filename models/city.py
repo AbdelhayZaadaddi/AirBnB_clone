@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-'''class Amentys that inherits from BaseModel'''
+'''class City that inherits from BaseModel'''
 
 from models.base_model import BaseModel
 
 
 class City(BaseModel):
+    '''City class'''
     state_id = ""
     name = ""
