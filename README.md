@@ -61,7 +61,15 @@ It’s exactly the same as simple shell but limited to a specific use-case. In o
 - Update attributes of an object
 - Destroy an object
 
-## Examples
+
+## How to Satrt, use and examples
+
+Run the following command to start it:
+
+```python
+$ ./console.py
+```
+uses and examples:
 
 Interactive mode:
 ```
@@ -108,10 +116,3 @@ Every model inhertis attributes from BaseModel:
 - Place
 - Review
 
-## How to Satrt
-
-Run the following command:
-
-```python
-$ ./console.py
-```
