@@ -1,10 +1,11 @@
 #!/usr/bin/python3
+"""The console handle all commands for Hbnb"""
 
 import cmd
 import models
 from models.base_model import BaseModel
 from models.user import User
-from models.state import Satate
+from models.state import State
 from models.place import Place
 from models.amenity import Amenity
 from models.city import City
@@ -14,7 +15,7 @@ from models import storage
 
 class HBNBCommand(cmd.Cmd):
 
-    """Documentation here"""
+    """HBNBCommand class, uses cmd module to make a CI"""
 
     prompt = "(hbnb) "
 
@@ -28,6 +29,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
+        '''Pass empty line or on enter'''
         pass
 
     def do_create(self, arg):
@@ -63,44 +65,45 @@ class HBNBCommand(cmd.Cmd):
                     print("** no instance found **")
 
     def do_destroy(self, arg):
-        '''Deletes an instance based on the class name and id.'''
-        if not arg:
+        '''
+        Deletes an instance based on the class name and id
+        using : destroy <class name> <id>
+        '''
+        if len(arg) == 0:
             print("** class name missing **")
-            return
-
-        try:
-            class_name, instance_id = arg.split()
-            obj_key = "{}.{}".format(class_name, instance_id)
-            obj = storage.all().get(obj_key)
-            if not obj:
-                print("** no instance found **")
-                return
-            del storage.all()[obj_key]
-            storage.save()
-        except ValueError:
-            print("** instance id missing **")
-        except NameError:
-            print("** class doesn't exist **")
+        else:
+            parts = arg.split()
+            if parts[0] not in globals():
+                print("** class doesn't exist **")
+            elif len(parts) < 2:
+                print("** instance id missing **")
+            else:
+                class_name = parts[0]
+                obj_id = parts[1]
+                key = f"{class_name}.{obj_id}"
+                if key in storage.all():
+                    del storage.all()[key]
+                    storage.save()
+                else:
+                    print("** no instance found **")
 
     def do_all(self, arg):
-        '''Prints all string representation of all instances.'''
-        if arg:
-            try:
-                obj_list = [str(obj) for obj in storage.all().values()
-                            if obj.__class__.__name__ == arg]
-                if not obj_list:
-                    print("** class doesn't exist **")
-                    return
-                print(obj_list)
-                return
-            except NameError:
-                pass
-            print("** class doesn't exist **")
-            return
-
-        obj_list = [str(obj) for obj in storage.all().values()]
-        # fix the typo here
-        print(obj_list)
+        '''
+        all Prints all string representation of all instances
+        based or not on the class name and id
+        using : all or all <class name> <id>
+        '''
+        # all User
+        parts = arg.split()
+        if len(parts) < 1:
+            print(storage.all())
+        else:
+            if parts[0] not in globals():
+                print("** class doesn't exist **")
+            else:
+                for key in storage.all():
+                    if parts[0] == key.split('.')[0]:
+                        print(storage.all()[key])
 
     def do_update(self, arg):
         '''Updates an instance based on the class name and id.'''
@@ -110,7 +113,7 @@ class HBNBCommand(cmd.Cmd):
         elif args[0] not in globals():
             print("** class doesn't exist **")
         elif len(args) < 2:
-            print(" instance id missing **")
+            print("** instance id missing **")
         elif f"{args[0]}.{args[1]}" not in storage.all():
             print("** no instance found **")
         elif len(args) < 3:
@@ -122,8 +125,8 @@ class HBNBCommand(cmd.Cmd):
             if key not in storage.all():
                 print("** no instance found **")
             else:
-                if args[2] in ("id", "craeted_at", "updated_at"):
-                    print("can't update **")
+                if args[2] in ("id", "created_at", "updated_at"):
+                    print("** can't update **")
                     return
                 obj = storage.all()[key]
                 setattr(obj, args[2], args[3])
