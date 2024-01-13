@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' Base module class for class to inherit from'''
+"""Module for BaseClass, from which classes inherit"""
 
 import uuid
 from datetime import datetime
@@ -7,9 +7,9 @@ from models import storage
 
 
 class BaseModel():
-    '''Defines methods for class to inherit from'''
+    ""'Defines methods for class to inherit from"""
     def __init__(self, *args, **kwargs):
-        '''Initializes instances'''
+        """Initializes the instances"""
         sformat = '%Y-%m-%dT%H:%M:%S.%f'
         if kwargs:
             for key, value in kwargs.items():
@@ -25,14 +25,14 @@ class BaseModel():
             storage.new(self)
 
     def __str__(self):
-        '''string representation of the object'''
+        """String representation of the object"""
         class_name = self.__class__.__name__
         dicts = self.__dict__
         id = self.id
         return ("[{}] ({}) ({})".format(class_name, id, dicts))
 
     def to_dict(self):
-        '''Converts the object's attributes to a dictionary'''
+        """Converts the Object's attributes to a dictionary"""
         dict = self.__dict__.copy()
         dict['__class__'] = self.__class__.__name__
         dict['created_at'] = self.created_at.isoformat()
@@ -40,6 +40,6 @@ class BaseModel():
         return (dict)
 
     def save(self):
-        """ updates with the current datetime """
+        """Updates time with the current datetime """
         self.updated_at = datetime.now()
         storage.save()
