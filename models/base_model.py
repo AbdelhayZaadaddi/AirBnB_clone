@@ -40,6 +40,6 @@ class BaseModel():
         return (dict)
 
     def save(self):
-        """Updates time with the current datetime """
+        """Updates time with the current datetime"""
         self.updated_at = datetime.now()
         storage.save()
