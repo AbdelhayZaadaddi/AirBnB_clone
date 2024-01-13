@@ -18,6 +18,8 @@ class TestConsole(unittest.TestCase):
         """Tear down function"""
         pass
 
+    def test_console(self):
+        assertEqual(5, 6-1)
 
 if __name__ == "__main__":
     unittest.main()
