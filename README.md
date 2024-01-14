@@ -64,12 +64,12 @@ It’s exactly the same as simple shell but limited to a specific use-case. In o
 
 ## How to start, use and examples
 
-- Run the following command to start it:
+### - Run the following command to start it:
 
 ```python
 $ ./console.py
 ```
-- Usage:
+### - Usage:
 
 Available Commands:
 | Command | Explanation |
@@ -103,7 +103,7 @@ Every model inhertis attributes from BaseModel:
 
 
 
-- Examples:
+### - Examples:
 
 Interactive mode:
 ```
