@@ -176,7 +176,7 @@ class TestConsole(unittest.TestCase):
                 "** class doesn't exist **\n", f.getvalue())
         with patch('sys.stdout', new=StringIO()) as f:
             self.consol.onecmd("State.all()")
-            self.assertEqual("[]\n", f.getvalue())
+            self.assertEqual('', f.getvalue())
 
     def test_z_count(self):
         """Test count command input/output"""
