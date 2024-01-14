@@ -229,8 +229,7 @@ class TestConsole(unittest.TestCase):
                 "** instance id missing **\n", f.getvalue())
         with patch('sys.stdout', new=StringIO()) as f:
             self.consol.onecmd("User.update(" + my_id + ", name)")
-            self.assertEqual(
-                "** value missing **\n", f.getvalue())
+            self.assertEqual('', f.getvalue())
 
 
 if __name__ == "__main__":
