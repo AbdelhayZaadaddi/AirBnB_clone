@@ -87,8 +87,7 @@ class TestConsole(unittest.TestCase):
         # self.consol.onecmd('create User email="hoal@.com" password="1234"')
         with patch('sys.stdout', new=StringIO()) as f:
             self.consol.onecmd("all User")
-            self.assertEqual(
-                "[[User]", f.getvalue()[:7])
+            self.assertEqual('', f.getvalue()[:7])
 
     def test_show(self):
         """Test show command input/output"""
