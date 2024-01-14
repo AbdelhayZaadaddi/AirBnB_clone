@@ -89,6 +89,19 @@ Daynamic Commands:
 | [class name].update() ||
 | [class name].update() ||
 
+Available Classes:
+
+Every model inhertis attributes from BaseModel:
+
+- Attributes
+- BaseModel
+- User
+- City
+- Amenity
+- Place
+- Review
+
+
 
 Examples:
 
@@ -124,16 +137,3 @@ EOF  help  quit
 (hbnb)
 $
 ```
-
-### Available Classes
-
-Every model inhertis attributes from BaseModel:
-
-- Attributes
-- BaseModel
-- User
-- City
-- Amenity
-- Place
-- Review
-
