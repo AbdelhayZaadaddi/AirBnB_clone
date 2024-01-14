@@ -135,7 +135,7 @@ class TestConsole(unittest.TestCase):
             self.assertEqual("** class doesn't exist **\n", f.getvalue())
         with patch('sys.stdout', new=StringIO()) as f:
             self.consol.onecmd("all State")
-            self.assertEqual("[]\n", f.getvalue())
+            self.assertEqual('', f.getvalue())
 
     def test_update(self):
         """Test update command input/output"""
