@@ -69,7 +69,28 @@ Run the following command to start it:
 ```python
 $ ./console.py
 ```
-uses and examples:
+Usage:
+
+Available Commands:
+| Command | Explanation |
+| ------- | ----------- |
+| create ||
+| show ||
+| all ||
+| update ||
+
+Daynamic Commands:
+| Command | Example |
+| ------- | ------- |
+| [class name].all() ||
+| [class name].count() ||
+| [class name].show() ||
+| [class name].destroy() ||
+| [class name].update() ||
+| [class name].update() ||
+
+
+Examples:
 
 Interactive mode:
 ```
