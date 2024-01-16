@@ -79,6 +79,14 @@ Available Commands:
 | all | prints all string representations of all instances based or not on the class name. | ```all BaseModel``` |
 | update | updates and instance based on the class name and ```id``` by adding or updating an attribute (saves the change to JSON file). | ```update BaseModel 1234-5678-9101 email "someone@gmail.com"```|
 
+Command input:
+| Command | Example |
+| ------- | ------- |
+| create | create [class name] |
+| show | show [class name] [id] |
+| all | all [class name] [id] |
+| update | update [class name] [id] [arg_name] [arg_value] |
+
 Daynamic Commands:
 | Command | Example |
 | ------- | ------- |
