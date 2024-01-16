@@ -95,8 +95,7 @@ Daynamic Commands:
 | [class name].show(id) | User.show("1234-1536-7358") |
 | [class name].destroy(id) | User.destroy("1234-1536-7358") |
 | [class name].update(id, attribute name, value) | User.update("1234-1536-7358", "first_name", "Huda") |
-| [class name].update(id, dictionary) | User.update("1234-1536-7358", {
-'first_name': "Huda", 'age':20}) |
+| [class name].update(id, dictionary) | User.update("1234-1536-7358", {'first_name': "Huda", 'age':20}) |
 
  Available Classes:
 
