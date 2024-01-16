@@ -53,6 +53,7 @@ We strongly encourage you to work together on test cases, so that you don’t mi
 
 
 ## Description of command interpreter
+
 It’s exactly the same as simple shell but limited to a specific use-case. In our case, we want to be able to manage the objects of our project:
 
 - Create a new object (ex: a new User or a new Place)
@@ -61,6 +62,40 @@ It’s exactly the same as simple shell but limited to a specific use-case. In o
 - Update attributes of an object
 - Destroy an object
 
+Modes:
+
+Interactive mode:
+```
+$ ./console.py
+(hbnb) help
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb)
+(hbnb)
+(hbnb) quit
+$
+```
+Non-interactive mode:
+```
+$ echo "help" | ./console.py
+(hbnb)
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb)
+$
+```
 
 ## How to start, use and examples
 
@@ -97,10 +132,8 @@ Daynamic Commands:
 | [class name].update(id, attribute name, value) | User.update("1234-1536-7358", "first_name", "Huda") |
 | [class name].update(id, dictionary) | User.update("1234-1536-7358", {'first_name': "Huda", 'age':20}) |
 
- Available Classes:
-
-Every model inhertis attributes from BaseModel:
-
+Available Classes:
+ Every model inhertis attributes from BaseModel:
 - Attributes
 - BaseModel
 - User
@@ -108,40 +141,3 @@ Every model inhertis attributes from BaseModel:
 - Amenity
 - Place
 - Review
-
-
-### - Modes:
-
-Interactive mode:
-```
-$ ./console.py
-(hbnb) help
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb)
-(hbnb)
-(hbnb) quit
-$
-```
-Non-interactive mode:
-```
-$ echo "help" | ./console.py
-(hbnb)
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb) 
-$
-$ cat test_help
-help
-$
-$ cat test_help | ./console.py
-(hbnb)
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb)
-$
-```
-
