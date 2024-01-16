@@ -133,6 +133,7 @@ Daynamic Commands:
 | [class name].update(id, dictionary) | User.update("1234-1536-7358", {'first_name': "Huda", 'age':20}) |
 
 Available Classes:
+
  Every model inhertis attributes from BaseModel:
 - Attributes
 - BaseModel
