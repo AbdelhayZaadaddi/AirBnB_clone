@@ -74,10 +74,10 @@ $ ./console.py
 Available Commands:
 | Command | Explanation | Example |
 | ------- | ----------- | ------- |
-| create | Create anew instance of ```BaseModel```, saves it to JSON file and prints the ```id```. | ```create BaseModel```|
-| show ||
-| all ||
-| update ||
+| create | Create anew instance of ```BaseModel```, saves it to JSON file and prints the ```id```. | ```create BaseModel``` |
+| show | prints the string representation of an instance based on the class name and ```id```.| show BaseModel ```1234-5678-9101``` |
+| all | prints all string representations of all instances based or not on the class name. | ```all BaseModel``` |
+| update | updates and instance based on the class name and ```id``` by adding or updating an attribute (saves the change to JSON file). | ```update BaseModel 1234-5678-9101 email "someone@gmail.com"```|
 
 Daynamic Commands:
 | Command | Example |
@@ -100,7 +100,6 @@ Every model inhertis attributes from BaseModel:
 - Amenity
 - Place
 - Review
-
 
 
 ### - Modes:
@@ -137,3 +136,4 @@ EOF  help  quit
 (hbnb)
 $
 ```
+
