@@ -69,12 +69,12 @@ It’s exactly the same as simple shell but limited to a specific use-case. In o
 ```python
 $ ./console.py
 ```
-### - Usage:
+### - Usage and Examples:
 
 Available Commands:
-| Command | Explanation |
-| ------- | ----------- |
-| create ||
+| Command | Explanation | Example |
+| ------- | ----------- | ------- |
+| create | Create anew instance of ```BaseModel```, saves it to JSON file and prints the ```id```. | ```create BaseModel```|
 | show ||
 | all ||
 | update ||
@@ -103,7 +103,7 @@ Every model inhertis attributes from BaseModel:
 
 
 
-### - Examples:
+### - Modes:
 
 Interactive mode:
 ```
