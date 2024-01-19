@@ -3,4 +3,14 @@ header {
     height: 70px;
     width: 100%;
     border-bottom: 1px #CCCCCC solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    padding-left: 20px;
+    height: 80%;
+    width: 100%;
+    background-image: url("/images/logo.png");
 }
