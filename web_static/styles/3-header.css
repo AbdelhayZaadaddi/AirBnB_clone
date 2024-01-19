@@ -7,12 +7,11 @@ header {
     justify-content: flex-start;
     }
 
-    .logo {
-        background-image: url("/web_static//images/icon.png");
-        padding-left: 20px;
-        height: 80%;
-        width: 100px;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-    
+.logo {
+    background-image: url("/images/logo.png");
+    padding-left: 20px;
+    height: 80%;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
