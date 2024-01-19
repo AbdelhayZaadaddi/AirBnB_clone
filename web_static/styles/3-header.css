@@ -13,4 +13,6 @@ header {
     height: 80%;
     width: 100%;
     background-image: url("/images/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
 }
