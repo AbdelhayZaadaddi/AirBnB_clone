@@ -5,7 +5,7 @@ header {
     border-bottom: 1px #CCCCCC solid;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .logo {
