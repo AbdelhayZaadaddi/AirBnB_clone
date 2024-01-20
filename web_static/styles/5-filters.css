@@ -1,3 +1,30 @@
-.location {
+.filters {
+    height: 70px;
+    width: 100%;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 999;
+
+}
+
+.filters button {
+    font-size: 18px;
+    background-color: #FF5A5F;
+    color: #FFFFFF;
+    height: 48px;
+    width: 20%;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-right: 30px;
+    transition: .3s ease;
     
+}
+.filters button:hover{
+    opacity: 90%;
+
 }
