@@ -4,6 +4,8 @@
     width: 100%;
     border: 1px #DDDDDD solid;
     border-radius: 4px;
+    display: flex;
+    justify-content: center;
 }
 
 button {
