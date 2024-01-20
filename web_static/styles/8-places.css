@@ -44,4 +44,7 @@
     width: 100px;
     background-repeat: no-repeat;
     background-position: top center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
