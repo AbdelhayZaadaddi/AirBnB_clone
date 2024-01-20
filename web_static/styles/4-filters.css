@@ -19,7 +19,8 @@ button {
     border: none;
     cursor: pointer;
     display: block;
-    
+    margin-right: 30px;
+    transition: .1s ease;
     
 }
 button:hover{
