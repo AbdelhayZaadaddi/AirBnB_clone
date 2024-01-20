@@ -110,3 +110,15 @@ section.places .amenities ul li {
     padding-left: 25px;
     line-height: 25px;
 }
+
+section.places .amenities ul li.liTV {
+    background-image: url("../images/icon_tv.png");
+}
+
+section.places .amenities ul li.liWifi {
+    background-image: url("../images/icon_wifi.png");
+}
+
+section.places .amenities ul li.liPets {
+    background-image: url("../images/icon_pets.png");
+}
