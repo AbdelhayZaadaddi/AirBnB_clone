@@ -98,3 +98,15 @@ section.places .amenities h2, section.places .reviews h2 {
     border-bottom: 1px solid #DDDDDD;
     margin-bottom: 0;
 }
+
+section.places .amenities ul {
+    margin-top: 0;
+}
+
+section.places .amenities ul li {
+    background-repeat: no-repeat;
+    height: 20px;
+    background-size: contain;
+    padding-left: 25px;
+    line-height: 25px;
+}
