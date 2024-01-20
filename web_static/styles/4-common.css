@@ -12,3 +12,12 @@ body {
     width: 1000px;
     margin: 30px auto;
 }
+
+h4 {
+    font-weight: 400;
+}
+
+ul {
+    list-style: none;
+    padding: 10px;
+}
