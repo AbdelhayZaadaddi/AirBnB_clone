@@ -1,17 +1,8 @@
 header {
-    background-color: #ffffff;
-    height: 70px; width: 100%;
-    border-bottom: 1px #CCCCCC solid;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    }
-
-.logo {
-    background-image: url("/images/logo.png");
-    padding-left: 20px;
-    height: 80%;
-    width: 100px;
+    background: white url("../images/logo.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-position: 20px center;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
 }
