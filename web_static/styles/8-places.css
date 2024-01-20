@@ -68,3 +68,12 @@
 .number_bathrooms {
     background-image: url("../images/icon_bath.png");
 }
+
+.max_guest h4, .number_rooms h4 .number_bathrooms h4 {
+    margin: 5px;
+}
+
+.user {
+    display: flex;
+    padding-top: 20px;
+}
