@@ -1,0 +1,15 @@
+.places {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.places h1 {
+    font-size: 30px;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.places article {
+    
+}
