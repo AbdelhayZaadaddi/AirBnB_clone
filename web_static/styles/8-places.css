@@ -39,3 +39,9 @@
     text-align: center;
     line-height: 60px;
 }
+
+.max-guest, .number_rooms, .number_bathrooms {
+    width: 100px;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
