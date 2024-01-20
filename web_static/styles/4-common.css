@@ -10,4 +10,5 @@ body {
 .container {
     background-color: white;
     width: 1000px;
+    margin: 30px auto;
 }
