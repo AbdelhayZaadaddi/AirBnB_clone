@@ -85,3 +85,9 @@
 .description {
     text-align: left;
 }
+
+section.places .amenities, section.places .reviews {
+    margin-top: 40px;
+    display: block;
+    text-align: left;
+}
