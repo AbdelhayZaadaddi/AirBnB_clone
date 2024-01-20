@@ -40,6 +40,14 @@
     line-height: 60px;
 }
 
+.information {
+    height: 80px;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    display: flex;
+    justify-content: center;
+}
+
 .max_guest, .number_rooms, .number_bathrooms {
     width: 100px;
     background-repeat: no-repeat;
