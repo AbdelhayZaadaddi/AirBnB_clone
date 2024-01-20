@@ -15,6 +15,9 @@
     width: 25%;
     border-right: #DDDDDD 1px solid;
 }
+.location h3 {
+    font-weight: 600;
+}
 
 .filters button {
     font-size: 18px;
