@@ -91,3 +91,10 @@ section.places .amenities, section.places .reviews {
     display: block;
     text-align: left;
 }
+
+section.places .amenities h2, section.places .reviews h2 {
+    font-size: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #DDDDDD;
+    margin-bottom: 0;
+}
