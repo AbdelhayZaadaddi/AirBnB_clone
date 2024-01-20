@@ -48,3 +48,24 @@
 .locations h4, section.filters .amenities h4 {
     margin: 2px 0 0 20px;
 }
+
+ul.popover {
+    background-color: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    top: 0;
+    display: none;
+    margin-top: 70px;
+    position: absolute;
+    z-index: 1;
+}
+
+ul.popover ul li h2 {
+    font-size: 16px;
+}
+
+.filters div:hover ul.popover {
+    display: block;
+}
